@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx--dev
+    ports:
+        - 80:80
+    ulimits:
+      nproc: 65535
+    networks:
+      - otasoft-proxy-network
+
+networks:
+  otasoft-proxy-network:
+    driver: bridge
