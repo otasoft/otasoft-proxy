@@ -14,15 +14,14 @@
 </p>
 
 ## About The Project
-Otasoft Proxy is a proxy and firewall service for API Gateway in Online Travel Agency Ecosystem. It rejects unwanted requests and transfer good one to the API Gateway. It guarantees network layer security between client applications and the API Gateway
+Otasoft Proxy is a proxy and firewall service for API Gateway in Online Travel Agency Ecosystem. It rejects unwanted requests and transfer correct ones to the API Gateway. It guarantees network layer security between client applications and the API Gateway
 
 * Nginx
-* HaProxy
+* Haproxy
 * iptables (firewalld)
 * Docker
 
 Otasoft projects are and always will be open source (MIT Licence). Anyone can use and support the project. The project is currently in the development phase.
-
 
 ## Table of Contents
 
@@ -53,14 +52,15 @@ git clone https://github.com/otasoft/otasoft-proxy
 ```sh
 cp .env.example .env
 ```
-4. Run docker-compose for all projects or for each individual project
+4. Run script to generate OpenSSL public certificate and private key
+```sh
+sh /scripts/generate-nginx-ssl-cert.sh
+```
+5. Run docker-compose to start the proxy service
 ```sh
 docker-compose up
 ```
-5. Run project
-```sh
-yarn start:dev
-```
+
 <!-- ROADMAP -->
 ## Roadmap
 
