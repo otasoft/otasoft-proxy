@@ -2,5 +2,5 @@
 .env
 
 # Secrets
-security/secrets/private-key.key
-security/secrets/public-cert.crt
+secrets/private-key.key
+secrets/public-cert.crt
