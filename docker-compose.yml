@@ -6,6 +6,11 @@ services:
     container_name: nginx--dev
     ports:
         - 80:80
+        - 443:443
+    volumes:
+        - ${PWD}/nginx/dev:/etc/nginx/conf.d/
+        - ./secrets/public-cert.crt:/etc/ssl/public-cert.crt
+        - ./secrets/private-key.key:/etc/ssl/private-key.key
     ulimits:
       nproc: 65535
     networks:
