@@ -50,13 +50,28 @@ git clone https://github.com/otasoft/otasoft-proxy
 ```
 3. Copy .env.example file as .env and fill it with your environment variables
 ```sh
-cp .env.example .env
+cp .env.example .env # Linux and Mac
+
+copy .env.example .env # Windows
 ```
 4. Run script to generate OpenSSL public certificate and private key
 ```sh
-sh /scripts/generate-nginx-ssl-cert.sh
+sh /scripts/generate-nginx-ssl-cert.sh # Linux and Mac
+
+bash /scripts/generate-nginx-ssl-cert.sh # Windows
+
+# If you dont have bash installed this link could help you 
+# https://stackoverflow.com/questions/26522789/how-to-run-sh-on-windows-command-prompt
 ```
-5. Run docker-compose to start the proxy service
+5. Add static entry in etc/hosts for otasoft-proxy
+```sh
+sudo nano /etc/hosts # Linux and Mac
+
+edit C:\Windows\System32\drivers\etc\hosts # Windows
+
+> 127.0.0.1 proxy.otasoft.org
+```
+6. Run docker-compose to start the proxy service
 ```sh
 docker-compose up
 ```
